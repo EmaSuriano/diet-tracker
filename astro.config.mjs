@@ -10,6 +10,8 @@ import { manifest, seoConfig } from "./seoConfig";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://emasuriano.github.io",
+  base: "diet-tracker",
   integrations: [react(), tailwind({ applyBaseStyles: false }), sitemap()],
   vite: {
     plugins: [
