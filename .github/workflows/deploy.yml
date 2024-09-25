@@ -18,10 +18,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      - name: create env file
+        run: |
+          touch .env
+          echo GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }} >> .env
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        env:
-          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
 
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
